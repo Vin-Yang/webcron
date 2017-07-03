@@ -3,9 +3,9 @@ package controllers
 import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/utils"
-	"github.com/lisijie/webcron/app/jobs"
-	"github.com/lisijie/webcron/app/libs"
-	"github.com/lisijie/webcron/app/models"
+	"github.com/Vin-Yang/webcron/app/jobs"
+	"github.com/Vin-Yang/webcron/app/libs"
+	"github.com/Vin-Yang/webcron/app/models"
 	"runtime"
 	"strconv"
 	"strings"
@@ -146,7 +146,7 @@ func (this *MainController) Login() {
 					this.Ctx.SetCookie("auth", strconv.Itoa(user.Id)+"|"+authkey)
 				}
 
-				this.redirect(beego.URLFor("TaskController.List"))
+				this.redirect(beego.URLFor("MainController.Index"))
 			}
 			flash.Error(errorMsg)
 			flash.Store(&this.Controller)
